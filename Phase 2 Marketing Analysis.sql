@@ -8,7 +8,7 @@ SELECT
     ROUND(AVG(revenue),2) as average_transaction
 FROM transactions;
 
--- Revenue and transation count by channel
+-- Revenue and transaction count by channel
 SELECT 
 	c.channel,
     COUNT(t.transaction_id) as transactions,
