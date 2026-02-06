@@ -1,5 +1,34 @@
 -- Phase 3 Advanced Marketing Analytics
 
+-- Campaign ROI
+WITH spend_by_campaign AS (
+    SELECT 
+        campaign,
+        ROUND(SUM(spend)) AS cost
+    FROM marketing_spend
+    GROUP BY campaign
+),
+revenue_by_campaign AS (
+    SELECT 
+        c.campaign,
+        COUNT(t.transaction_id) AS conversions,
+        ROUND(SUM(t.revenue)) AS revenue
+    FROM customers c
+    JOIN transactions t 
+        ON t.customer_id = c.customer_id
+    GROUP BY c.campaign
+)
+SELECT 
+    s.campaign,
+    r.conversions,
+    r.revenue,
+    s.cost,
+    ROUND((r.revenue - s.cost) / NULLIF(s.cost, 0), 2) AS ROI
+FROM spend_by_campaign s
+LEFT JOIN revenue_by_campaign r 
+    ON s.campaign = r.campaign
+ORDER BY ROI DESC;
+
 -- Cohort Analysis (Customer Retention Over Time)
 -- Identify First Purchase Month
 WITH first_purchase AS(
@@ -96,16 +125,28 @@ GROUP BY channel, campaign
 ORDER BY cost_per_conversion ASC;
 
 -- Funnel Trend Over Time (Lifecycle Marketing)
+WITH monthly_metrics AS (
+    SELECT 
+        DATE_FORMAT(STR_TO_DATE(date, '%m/%d/%Y'), '%Y-%m') AS month,
+        SUM(impressions) AS impressions,
+        SUM(clicks) AS clicks,
+        SUM(conversions) AS conversions,
+        ROUND(SUM(clicks) / NULLIF(SUM(impressions), 0), 4) AS click_through_rate,
+        ROUND(SUM(conversions) / NULLIF(SUM(clicks), 0), 4) AS conversion_rate
+    FROM marketing_spend
+    GROUP BY DATE_FORMAT(STR_TO_DATE(date, '%m/%d/%Y'), '%Y-%m')
+)
 SELECT 
-    DATE_FORMAT(STR_TO_DATE(date, '%m/%d/%Y'), '%Y-%m') AS month,
-    SUM(impressions) AS impressions,
-    SUM(clicks) AS clicks,
-    SUM(conversions) AS conversions,
-    ROUND(SUM(clicks) / NULLIF(SUM(impressions), 0), 4) AS click_through_rate,
-    ROUND(SUM(conversions) / NULLIF(SUM(clicks), 0), 4) AS conversion_rate
-FROM marketing_spend
-GROUP BY month
+    month,
+    impressions,
+    clicks,
+    conversions,
+    click_through_rate,
+    conversion_rate,
+    ROUND(
+        conversion_rate 
+        - LAG(conversion_rate) OVER (ORDER BY month),
+        4
+    ) AS conversion_rate_mom_change
+FROM monthly_metrics
 ORDER BY month;
-
-
-
