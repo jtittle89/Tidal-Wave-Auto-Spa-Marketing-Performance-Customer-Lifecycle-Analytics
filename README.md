@@ -1,7 +1,8 @@
 # Tidal-Wave-Auto-Spa-Marketing-Performance-Customer-Lifecycle-Analytics
 Senior Marketing Analyst Project
 
-Project OVerview
+Project Overview
+
 This project simulates a real-world marketing analytics environment by combining synthetic datasets, advanced SQL analysis, and Power BI dashboards to evaluate marketing performance, customer behavior, and business growth opportunities.
 
 The objective is to demonstrate end-to-end analytics capabilities, including data generation, data modeling, advanced SQL querying, customer segmentation, cohort analysis, and executive-level reporting.
@@ -30,8 +31,6 @@ Business Objectives:
 
 Tools:
 
-SQL: Perform analysis on datasets to uncover insights and trends.
-
 Power BI: Build reports and dashboards to tell data insight stories through visualizations and interactivity, leading to efficient business decisions.
 
 Python
@@ -42,19 +41,60 @@ Python
 
 SQL
 
+    Phase 1 Data Understanding and Exploration
     
-
-
-- Phase 1
-  -
-- Phase 2
-  -
-- Phase 3
-  -
+    - Loaded CSV datasets into the schema
+    
+    - Explored the tables using SHOW and DESCRIBE
+    
+    - Viewed the number of rows for each table
+    
+    - Identified any null values in the tables
+    
+    - Searched for any duplicate primary keys inside of tables with primary keys
+    
+    - Searched for any invalid values such as dates and amounts that did not fit the expected parameters
+    
+    Phase 2 Marketing Analysis
+    
+    - Used aggregations to summarize total revenue, transactions, and customers 
+    
+    - Summarized revenue and transaction count by channel
+    
+    - Analyzed campaign performance using CTEs to determine ROAS, CAC, Customer LTV, and RFM analysis
+    
+    - Identified the locations and service types that generate the most revenue
+    
+    - Segmented customers into High Value, Mid Value, and Low Value based on overall spend
+    
+    - Analyzed customer review sentiments to determine if any trends are present
+    
+    - Summarized customer service metrics byissue type, resolution time, and CSAT scores
+    
+    Phase 3 Advanced Marketing Analysis
+    
+    - Used CTEs to calculate campign ROI, perform cohort analysis, and determine retention rates and churn
+    
+    - Performed funnel analysis on customer activity Impressions -> Clicks -> Conversions
+    
+    - Calculated lifecycle marketing using CTE and window functions
 
 Power BI
-Executive Marketing Dashboard
-- 
--
--
+
+    Executive Marketing Dashboard
+    
+    - Connected to the CSV files and linked them together in the data model
+    
+    - Calculated measures for total revenue, total spend, ROAS, CAC, average LTV, total conversions, CPA, and CTR
+    
+    - Added KPI cards for total revenue, total spend, ROAS, CAC, average LTV, total conversions
+    
+    - Created line charts to identify trends in revenue and spend over time
+    
+    - Created bar charts to show ROAS by channels and campaigns
+    
+    - Created a funnel chart showing the change in customer activity from impressions to clicks to conversions
+    
+    - Added slicers for interactivity and to filter results by campaign, channel, service type, and location
+    
 <img width="1442" height="812" alt="image" src="https://github.com/user-attachments/assets/d6bae90f-b6b4-44d2-a6d6-1e1b977d1db7" />
