@@ -11,31 +11,31 @@ Business Objectives:
     
     Evaluate marketing performance
     
-    Measure revenue, ROAS, CAC, and conversion efficiency by channel and campaign.
+    Measure revenue, ROAS, CAC, and conversion efficiency by channel and campaign
     
     Understand customer behavior
     
-    Analyze purchasing frequency, recency, and lifetime value.
+    Analyze purchasing frequency, recency, and lifetime value
     
     Identify high-value and at-risk customers
     
-    Segment customers using RFM analysis.
+    Segment customers using RFM analysis
     
     Assess retention and growth trends
     
-    Perform cohort analysis to evaluate long-term customer retention.
+    Perform cohort analysis to evaluate long-term customer retention
     
     Support data-driven decision-making
     
-    Provide executive-level insights through interactive dashboards.
+    Provide executive-level insights through interactive dashboards
 
 Tools:
 
 Python
 
-    Synthetic datasets were generated using Python to simulate realistic business data with noise, inconsistencies, and real-world complexity.
+    Synthetic datasets were generated using Python to simulate realistic business data with noise, inconsistencies, and real-world complexity
 
-    Datasets generated were for CRM Events, Customers, Customer Service, NPS Reviews, Transactions, and Marketing Spend.
+    Datasets generated were for CRM Events, Customers, Customer Service, NPS Reviews, Transactions, and Marketing Spend
 
 SQL
 
