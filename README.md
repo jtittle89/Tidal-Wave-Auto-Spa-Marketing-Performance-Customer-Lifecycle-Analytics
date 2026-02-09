@@ -31,8 +31,6 @@ Business Objectives:
 
 Tools:
 
-Power BI: Build reports and dashboards to tell data insight stories through visualizations and interactivity, leading to efficient business decisions.
-
 Python
 
     Synthetic datasets were generated using Python to simulate realistic business data with noise, inconsistencies, and real-world complexity.
