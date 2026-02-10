@@ -95,4 +95,7 @@ Power BI
     
     - Added slicers for interactivity and to filter results by campaign, channel, service type, and location
     
-<img width="1442" height="812" alt="image" src="https://github.com/user-attachments/assets/d6bae90f-b6b4-44d2-a6d6-1e1b977d1db7" />
+<img width="1440" height="807" alt="image" src="https://github.com/user-attachments/assets/fb9c2f3c-a4ce-4357-8a4a-81fc01a15d70" />
+
+
+
